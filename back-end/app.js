@@ -7,6 +7,7 @@ var routesPath = './routes/';
 var express = require('express');
 var routes = require('./routes');
 var person = require(routesPath + 'person-route');
+var district = require(routesPath + 'district-route');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -36,6 +37,9 @@ app.get('/', routes.index);
 
 // Person endpoints
 app.post('/person/new', person.new);
+
+// District endpoints
+app.post('/district/new', district.new);
 
 // Open the connection to MongoDB
 mongoose.connect('mongodb://localhost/votacionescr', function(err, res) {
