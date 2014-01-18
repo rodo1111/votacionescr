@@ -16,7 +16,6 @@ var Schema = mongoose.Schema;
  * Schema definition
  */
 var voterSchema = new Schema({
-	id: 					ObjectId,
 	age:					Number,
 	date:					Date,
 	gender:					Number,
