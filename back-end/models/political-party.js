@@ -17,7 +17,7 @@ var Schema = mongoose.Schema;
  */
 var politicalParySchema = new Schema({
 	name:					String,
-	cadidateName:			String,
+	candidateName:			String,
 	candidatePhotoUrl:		String,
 	politicalPartyPhotoUrl:	String
 });

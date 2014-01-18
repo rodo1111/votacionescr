@@ -15,3 +15,12 @@ exports.new = function(req, res) {
 		res.send(message);
 	});
 };
+
+/**
+ * GET the given person by its ndi.
+ */
+exports.get = function(req, res) {
+	PersonController.getPerson(req.params.ndi, function(message) {
+		res.send(message);
+	});
+};

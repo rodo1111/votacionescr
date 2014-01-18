@@ -37,6 +37,25 @@ var PersonController = {
 				callback('Person successfully saved');
 			}
 		});
+	},
+	
+	/**
+	 * Method to get a person from the ndi.
+	 * 
+	 * @param ndi String with the id to find
+	 */
+	getPerson : function(ndi, callback) {
+		var personQuery = Person.find({ ndi: ndi });
+		
+		// Executes the query
+		personQuery.exec(function(err, person) {
+			// Check the result of the operation
+			if (!err) {
+				callback(person);
+			} else {
+				callback(error);
+			}
+		});
 	}
 }
 

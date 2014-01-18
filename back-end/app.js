@@ -38,6 +38,7 @@ app.get('/', routes.index);
 
 // Person endpoints
 app.post('/person/new', person.new);
+app.get('/person/:ndi', person.get);
 
 // Political Party endpoints
 app.get('/political-parties', politicalParty.list);
