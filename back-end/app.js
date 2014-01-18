@@ -7,6 +7,7 @@ var routesPath = './routes/';
 var express = require('express');
 var routes = require('./routes');
 var person = require(routesPath + 'person-route');
+var politicalParty = require(routesPath + 'political-party-route');
 var district = require(routesPath + 'district-route');
 var http = require('http');
 var path = require('path');
@@ -37,6 +38,10 @@ app.get('/', routes.index);
 
 // Person endpoints
 app.post('/person/new', person.new);
+
+// Political Party endpoints
+app.get('/political-parties', politicalParty.list);
+app.post('/political-party/new', politicalParty.new);
 
 // District endpoints
 app.post('/district/new', district.new);
