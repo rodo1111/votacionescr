@@ -2,12 +2,14 @@
 /**
  * Module dependencies.
  */
+var routesPath = './routes/';
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
+var person = require(routesPath + 'person-route');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -31,7 +33,18 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+
+// Person endpoints
+app.post('/person/new', person.new);
+
+// Open the connection to MongoDB
+mongoose.connect('mongodb://localhost/votacionescr', function(err, res) {
+	if (err) {
+		console.log('Error connecting to MongoDB');
+	} else {
+		console.log('Successfully connected to MongoDB');
+	}
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
