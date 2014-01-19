@@ -16,9 +16,8 @@ var Schema = mongoose.Schema;
  * Schema definition
  */
 var politicalParySchema = new Schema({
-	id: 					ObjectId,
 	name:					String,
-	cadidateName:			String,
+	candidateName:			String,
 	candidatePhotoUrl:		String,
 	politicalPartyPhotoUrl:	String
 });
@@ -26,4 +25,4 @@ var politicalParySchema = new Schema({
 /**
  * Class export.
  */
-module.exports = mongoose.model('PoliticalPary', politicalParySchema);
+module.exports = mongoose.model('PoliticalParty', politicalParySchema, 'politicalParties');
