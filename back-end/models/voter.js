@@ -17,10 +17,17 @@ var Schema = mongoose.Schema;
  */
 var voterSchema = new Schema({
 	age:					Number,
-	date:					Date,
-	gender:					Number,
+	gender:					Number,	
 	voteTable:				String,
-	location:				String
+	date:					{ type: Date, default: Date.now },
+	location:				String,
+	votes: 
+		[
+			{
+				idPoliticalParty:		String,
+				voteType:				Number
+			}
+		]
 });
 
 /**

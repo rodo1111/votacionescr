@@ -9,6 +9,7 @@ var routes = require('./routes');
 var person = require(routesPath + 'person-route');
 var politicalParty = require(routesPath + 'political-party-route');
 var district = require(routesPath + 'district-route');
+var voter = require(routesPath + 'voter-route');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -46,6 +47,9 @@ app.post('/political-party/new', politicalParty.new);
 
 // District endpoints
 app.post('/district/new', district.new);
+
+// Voter endpoints
+app.post('/voter/new', voter.new);
 
 // Open the connection to MongoDB
 mongoose.connect('mongodb://localhost/votacionescr', function(err, res) {
