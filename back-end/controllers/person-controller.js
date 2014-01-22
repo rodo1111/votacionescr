@@ -5,7 +5,9 @@
 /**
  * Required modules.
  */
-var Person = require('../models/person');
+var Person = require('../models/person'),
+	lazy = require("lazy"),
+	fs = require('fs');
 
 var PersonController = {
 	/**
@@ -56,6 +58,31 @@ var PersonController = {
 				callback(error);
 			}
 		});
+	},
+
+	loadFromFile : function (path){
+		var rs = fs.createReadStream(path);
+
+		var self = this;
+
+		 new lazy(rs).lines.forEach(function(line){
+		         var data = line.toString().split(",");
+		         var json = { 
+		         	  ndi : data[0]
+		         	, electoralCode : data[1]
+		         	, gender : data[2]
+		         	, voteCenter : data[4]
+		         	, name : data[5].trim()
+		         	, firstSurname : data[6].trim()
+		         	, secondSurname : data[7].trim()
+		         	, birthday : null
+		         } ;
+		         self.savePerson(json, function(message) {
+					console.log(JSON.stringify(message));
+				 });
+		         console.log('Person %s - %s %s saved', json.ndi, json.name, json.firstSurname);
+		     }
+		 );
 	}
 }
 
