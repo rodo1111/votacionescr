@@ -9,6 +9,13 @@ mongoose.connect('mongodb://localhost/votacionescr', function(err, res) {
 	}
 });
 
-// Load the padron file into the database
 var personController = require('./controllers/person-controller');
+var voterController = require('./controllers/voter-controller');
+
+// Load the padron file into the database
 personController.loadFromFile('./padron/PADRON_COMPLETO.txt')
+
+// Generate a list of random voters
+voterController.generateRandomVoters('5000', function(message) {
+	console.log(message);
+});
