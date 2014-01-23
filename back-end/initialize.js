@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/votacionescr', function(err, res) {
 
 var personController = require('./controllers/person-controller');
 var voterController = require('./controllers/voter-controller');
+var politicalPartyController = require('./controllers/political-party-controller');
 
 // Load the padron file into the database
 personController.loadFromFile('./padron/PADRON_COMPLETO.txt')
@@ -19,3 +20,6 @@ personController.loadFromFile('./padron/PADRON_COMPLETO.txt')
 voterController.generateRandomVoters('5000', function(message) {
 	console.log(message);
 });
+
+// Load the list of political parties into the database
+politicalPartyController.loadFromFile('./resources/political-parties.json');

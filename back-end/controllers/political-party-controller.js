@@ -5,7 +5,8 @@
 /**
  * Required modules.
  */
-var PoliticalParty = require('../models/political-party');
+var PoliticalParty = require('../models/political-party'),
+	fs = require('fs');;
 
 var PoliticalPartyController = {
 	/**
@@ -52,6 +53,29 @@ var PoliticalPartyController = {
 				callback(error);
 			} else {
 				callback('Political Party successfully saved');
+			}
+		});
+	},
+	
+	/**
+	 * Method to load the political parties from the given path.
+	 * 
+	 * @param path String with the path of the JSON file
+	 */
+	loadFromFile : function(path) {
+		fs.readFile(path, 'utf8', function (err, data) {
+			if (err) {
+				console.log('Error: ' + err);
+				return;
+			}
+
+			var politicalParties = JSON.parse(data);
+
+			// Create each political party object
+			for (var indexPoliticalParty = 0; indexPoliticalParty < politicalParties.length; indexPoliticalParty++) {
+				PoliticalPartyController.savePoliticalParty(politicalParties[indexPoliticalParty], function(message) {
+					console.log(message);
+				});
 			}
 		});
 	}

@@ -1,0 +1,80 @@
+[
+  {
+    "name": "DE LOS TRABAJADORES",
+    "candidateName": "HECTOR ENRIQUE MONESTEL HERRERA",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/hector-monestel.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pt.jpg"
+  },
+  {
+    "name": "PATRIA NUEVA",
+    "candidateName": "JOSE MIGUEL CORRALES BOLANOS",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/jose-miguel-corrales.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/ppn.jpg"
+  },
+  {
+    "name": "ACCION CIUDADANA",
+    "candidateName": "LUIS GUILLERMO SOLIS RIVERA",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/luis-guillermo-solis.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pac.png"
+  },
+  {
+    "name": "RESTAURACION NACIONAL",
+    "candidateName": "CARLOS LUIS AVENDANO CALVO",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/carlos-luis-avendano.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pren.jpg"
+  },
+  {
+    "name": "MOVIMIENTO LIBERTARIO",
+    "candidateName": "OTTO GUEVARA GUTH",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/otto-guevara.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pml.jpg"
+  },
+  {
+    "name": "INTEGRACION NACIONAL",
+    "candidateName": "WALTER MUNOZ CESPEDES",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/walter-munos.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pin.jpg"
+  },
+  {
+    "name": "ACCESIBILIDAD SIN EXCLUSION",
+    "candidateName": "OSCAR ANDRES LOPEZ ARIAS",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/oscar-lopez.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pase.jpg"
+  },
+  {
+    "name": "FRENTE AMPLIO",
+    "candidateName": "JOSE MARIA VILLALTA FLOREZ ESTRADA",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/jose-maria-villalta.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/fa.jpg"
+  },
+  {
+    "name": "AVANCE NACIONAL",
+    "candidateName": "JOSE MANUEL ECHANDI MEZA",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/jose-manuel-echandi.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pgn.jpg"
+  },
+  {
+    "name": "LIBERACION NACIONAL",
+    "candidateName": "JOHNNY FRANCISCO ARAYA MONGE",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/johnny-araya.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pln.jpg"
+  },
+  {
+    "name": "RENOVACION COSTARRICENSE",
+    "candidateName": "JUSTO OROZCO ALVAREZ",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/justo-orozco.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/prc.jpg"
+  },
+  {
+    "name": "UNIDAD SOCIAL CRISTIANA",
+    "candidateName": "RODOLFO PIZA ROCAFORT",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/rodolfo-piza.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/pusc.jpg"
+  },
+  {
+    "name": "NUEVA GENERACION",
+    "candidateName": "SERGIO MENA DIAZ",
+    "candidatePhotoUrl": "/public/images/political-parties/president-candidates/sergio-mena.jpg",
+    "politicalPartyPhotoUrl": "/public/images/political-parties/flags/png.jpg"
+  }
+]
