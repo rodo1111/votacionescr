@@ -18,6 +18,17 @@
         function changeNavbarName (tabName){
             var brandName = tabName.innerHTML;
             document.getElementById("_brandText").innerHTML = (brandName);
+            document.getElementById("").style.display = "block";
+        }
+
+        //En construccion, aun no funciona
+        function showFilterDrawer() {
+            var myDrawer = document.getElementById("_filterDrawer");
+            if (myDrawer.style.right == "0px"){
+                myDrawer.style.right = "-360px";
+            } else {
+                myDrawer.style.right = "0px";
+            }
         }
         </script>
         <!--[if lt IE 9]>
@@ -52,18 +63,161 @@
             </div><!--/.nav-collapse -->
         </div>
 
+        <div id="_divContent" class="container">
+            <div id="_allResults" class="divPage" style="display:block">
+                <div class="row charts">
+                    <!-- Aqui mapa con los graficos-->
+                </div>
 
+                <div id="_filterDrawer" class="col-xs-9 col-sm-4 col-lg-3">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Edad</label>
+                            <input type="range" min="18" max="120" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Sexo</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Mujer
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Hombre
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Provincia</label>
+                            <select class="form-control">
+                                  <option>San Jos&eacute;</option>
+                                  <option>Alajuela</option>
+                                  <option>Heredia</option>
+                                  <option>Cartago</option>
+                                  <option>Puntarenas</option>
+                                  <option>Guanacaste</option>
+                                  <option>Lim&oacute;n</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Cant&oacute;n</label>
+                            <select class="form-control">
+                                  <option>Canton 1</option>
+                                  <option>Canton 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Distrito</label>
+                            <select class="form-control">
+                                  <option>Distrito 1</option>
+                                  <option>Distrito 2</option>
+                            </select>
+                        </div>
 
-        
-        
-       <!-- <div id="_divMainMenu">
-            <ul>
-                <li class="tabEjemplo selectedItem">Votos</li>
-                <li class="tabEjemplo">Mi Voto</li>
-                <li class="tabEjemplo">¿En donde voto?</li>
-            </ul>
-        </div>-->
-        <div id="_divContent"></div>
+                        <button type="submit" class="btn btn-default">Filtrar</button>
+                    </form>
+                    <div class="drawerTab" onclick="showFilterDrawer()"></div>
+                </div>
+            </div>
+
+            <div id="_myVote" class="divPage">
+                <div class="row" style="height:50px;">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">Registro</a></li>
+                            <li><a href="#">Presidente</a></li>
+                            <li><a href="#">Diputados</a></li>
+                        </ul>
+                </div>
+                <div id="_userData" class="row">
+                    <div class="col-xs-12 col-sm-4 col-lg-3 defaultColumns">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ingrese su número de cédula para registrar su mesa de votación</label>
+                                <input type="text" class="form-control" id="_personalID1" placeholder="C&eacute;dula sin guiones ni espacios">
+                                <p class="help-block">Respetamos su voto secreto, por eso la c&eacute;dula se utiliza &uacute;nicamente con fines estad&iacute;sticos. Su número de c&eacute;dula no será guardado.</p>
+                            </div>
+                            <button type="submit" class="btn btn-default">¡A votar!</button>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-3 defaultColumns">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Si prefiere no utilizar su c&eacute;dula, por favor indique su edad, sexo y lugar de voto</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" placeholder="C&eacute;dula sin guiones ni espacios">
+                            </div>
+                            <div class="form-group">
+                                <label>Edad</label>
+                                <input type="text" class="form-control" placeholder="C&eacute;dula sin guiones ni espacios">
+                            </div>
+                            <div class="form-group">
+                                <label>Sexo</label>
+                                <select class="form-control">
+                                      <option>Mujer</option>
+                                      <option>Hombre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Provincia</label>
+                                <select class="form-control">
+                                      <option>San Jos&eacute;</option>
+                                      <option>Alajuela</option>
+                                      <option>Heredia</option>
+                                      <option>Cartago</option>
+                                      <option>Puntarenas</option>
+                                      <option>Guanacaste</option>
+                                      <option>Lim&oacute;n</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Cant&oacute;n</label>
+                                <select class="form-control">
+                                      <option>Canton 1</option>
+                                      <option>Canton 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Distrito</label>
+                                <select class="form-control">
+                                      <option>Distrito 1</option>
+                                      <option>Distrito 2</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-default">¡A votar!</button>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        
+                    </div>
+                </div>
+                <div id="_president" class="row"></div>
+                <div id="_representatives" class="row"></div>
+            </div>
+
+            <div id="_votePlace" class="divPage">
+                <div class="row" style="height:100%;">
+                    <div class="col-xs-12 col-sm-4 col-md-3 defaultColumns">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Centro de votaci&oacute;n</label>
+                                <p class="help-block">Ingrese su n&uacute;mero de c&eacute;dula para ver su centro y mesa de votaci&oacute;n</p>
+                                <input type="text" class="form-control" id="_personalID2" placeholder="C&eacute;dula sin guiones ni espacios">
+                             </div> 
+                            <button type="submit" class="btn btn-default">Ver centro de votaci&oacute;n</button> 
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 defaultColumns" style="background-color:#d7d7d7; height:100%;">
+                        <!-- Aqui mapa con lugar de votacion-->
+                    </div>
+                </div>
+            </div>
+        </div>
 
 		<!--<header>
 		</header>
