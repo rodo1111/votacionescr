@@ -1,7 +1,8 @@
 var votacionescrApp = angular.module('votacionescrApp', [
 	'ngRoute',
 	'votacionescrControllers',
-	'politicalPartyServices']);
+	'politicalPartyServices',
+	'voterServices']);
 
 votacionescrApp.config(['$routeProvider',
   function($routeProvider) {

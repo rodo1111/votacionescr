@@ -22,7 +22,7 @@
 </div>
 
 <!-- HTMl with the modal to select a political party -->
-<div class="modal fade" id="modal-select-candidate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-select-candidate" tabindex="-1" role="dialog" aria-labelledby="voteModal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -34,15 +34,21 @@
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
 						<img src="{{actualSelectedCandidate.candidatePhotoUrl}}" />	
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						<h4>Su voto fue para <b>{{actualSelectedCandidate.candidateName}}</b> del partido 
-							<b>{{actualSelectedCandidate.name}}</b></h4>	
+					<div ng-show="!voteSuccessfullyEmitted" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<h4>&#191;Su voto es para <b>{{actualSelectedCandidate.candidateName}}</b> del partido 
+							<b>{{actualSelectedCandidate.name}}?</b></h4>	
+					</div>
+					<div ng-show="voteSuccessfullyEmitted" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<h4>Su voto para <b>{{actualSelectedCandidate.candidateName}}</b> del partido 
+							<b>{{actualSelectedCandidate.name}} ha sido emitido correctamente</b></h4>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-				<button type="button" class="btn btn-primary">S&iacute, votar</button>
+				<button type="button" class="btn btn-default" ng-show="!voteSuccessfullyEmitted" data-dismiss="modal">No</button>
+				<button type="button" class="btn btn-primary" ng-show="!voteSuccessfullyEmitted" ng-click="voteForParty()">S&iacute, votar</button>
+				<button type="button" class="btn btn-default" ng-show="voteSuccessfullyEmitted" data-dismiss="modal">Cerrar</button>
+				<a href="#" class="btn btn-success" ng-show="voteSuccessfullyEmitted" data-dismiss="modal">Ver resultados</a>
 			</div>
 		</div>
 	</div>
