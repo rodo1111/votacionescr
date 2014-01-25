@@ -14,7 +14,7 @@ votacionescrApp.config(['$routeProvider',
         templateUrl: 'partials/vote-place.html',
       }).
       otherwise({
-        templateUrl: 'partials/votos.html',
+        templateUrl: 'partials/results.html',
         redirectTo: ''
       });
   }]);
