@@ -15,6 +15,7 @@ votacionescrApp.config(['$routeProvider',
         controller: 'PhoneDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        templateUrl: 'partials/votos.html',
+        redirectTo: ''
       });
   }]);
