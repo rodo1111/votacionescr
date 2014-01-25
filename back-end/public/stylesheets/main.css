@@ -81,7 +81,7 @@ body
 .political-party-box {
 	text-align: center;	
 	height: 385px;
-	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .political-party-box .candidate-photo img {
@@ -90,8 +90,8 @@ body
 
 .political-party-box .party-photo {
 	position: absolute;
-	top: 3.5%;
-	right: 4.5%;
+	top: 0;
+	right: 5%;
 	text-align: right;
 }
 
