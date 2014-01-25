@@ -14,7 +14,7 @@ var voterController = require('./controllers/voter-controller');
 var politicalPartyController = require('./controllers/political-party-controller');
 
 // Load the padron file into the database
-personController.loadFromFile('./padron/PADRON_COMPLETO.txt')
+//personController.loadFromFile('./padron/PADRON_COMPLETO.txt')
 
 // Generate a list of random voters
 voterController.generateRandomVoters('5000', function(message) {
