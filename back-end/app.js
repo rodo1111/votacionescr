@@ -39,18 +39,13 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 
 // Person endpoints
-app.post('/person/new', person.new);
 app.get('/person/:ndi', person.get);
 
 // Political Party endpoints
 app.get('/political-parties', politicalParty.list);
-app.post('/political-party/new', politicalParty.new);
-
-// District endpoints
-app.post('/district/new', district.new);
 
 // Voter endpoints
-app.post('/voter/new', voter.new);
+app.post('/voter', voter.new);
 
 // Results endpoint
 app.get('/results/:voteType', results.generalResults);
