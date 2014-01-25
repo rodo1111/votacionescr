@@ -74,6 +74,31 @@ body
 	height: 100%;
 }
 
+.political-party-box {
+	border: 1px solid #eeeeee;
+}
+
+.political-party-box {
+	text-align: center;	
+	height: 385px;
+	margin-top: 15px;
+}
+
+.political-party-box .candidate-photo img {
+	margin: 0 auto;
+}
+
+.political-party-box .party-photo {
+	position: absolute;
+	top: 3.5%;
+	right: 4.5%;
+	text-align: right;
+}
+
+.political-party-box .party-photo img {
+	width: 20%;
+}
+
 /* Custom	=CTM
 ---------------------------------------------------------------------------*/
 .charts
