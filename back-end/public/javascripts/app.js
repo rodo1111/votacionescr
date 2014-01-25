@@ -1,0 +1,1 @@
+var votacionescrApp = angular.module('votacionescrApp', ['VoterCtrl', 'politicalPartyServices']);
