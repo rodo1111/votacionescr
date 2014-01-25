@@ -42,7 +42,8 @@ var PoliticalPartyController = {
 				name : 						politicalPartyObj.name,
 				candidateName : 			politicalPartyObj.candidateName,
 				candidatePhotoUrl : 		politicalPartyObj.candidatePhotoUrl,
-				politicalPartyPhotoUrl : 	politicalPartyObj.politicalPartyPhotoUrl
+				politicalPartyPhotoUrl : 	politicalPartyObj.politicalPartyPhotoUrl,
+				type :						politicalPartyObj.type
 			}
 		);
 		
