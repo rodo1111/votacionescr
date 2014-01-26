@@ -15,10 +15,16 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script type="text/javascript">
-        function changeNavbarName (tabName){
+        function changeNavbarName (tabName, pageDisplay){
             var brandName = tabName.innerHTML;
             document.getElementById("_brandText").innerHTML = (brandName);
-            document.getElementById("").style.display = "block";
+            
+            var myScreens = document.getElementsByClassName("divPage");
+            
+            for (var i = 0; i < myScreens.length; i++) {
+                myScreens[i].style.display = "none";
+            };
+            myScreens[pageDisplay].style.display = "block";
         }
 
         function showFilterDrawer() {
@@ -43,7 +49,10 @@
         <![endif]-->
 
         <div id="_divHeader">
-            <div id="_divLogoApp"></div>
+            <div id="_divLogoApp">
+                <div style="background-color:#FFF; width:53px; height:53px; display:inline-block"></div>
+                <div style="color: #FFF; font-size: 24px; display:inline-block; height:53px;">VotoCR</div>
+            </div>
         </div>
         
         <div id="_divMainMenu" class="navbar navbar-default" role="navigation">
@@ -56,18 +65,18 @@
                 </button>
                 <div id="_brandText" class="navbar-brand">Votos</div>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse menuTabs">
                 <ul class="nav navbar-nav">
-                    <li class="active" onclick="changeNavbarName(this)"><a href="#">Votos</a></li>
-                    <li><a href="#" onclick="changeNavbarName(this)">Mi voto</a></li>
-                    <li><a href="#" onclick="changeNavbarName(this)">¿En d&oacute;nde voto?</a></li>
+                    <li class="active"><a href="#" onclick="changeNavbarName(this, 0)">Votos</a></li>
+                    <li><a href="#" onclick="changeNavbarName(this, 1)">Mi voto</a></li>
+                    <li><a href="#" onclick="changeNavbarName(this, 2)">¿En d&oacute;nde voto?</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
 
         <div id="_divContent" class="container">
-            <div id="_allResults" class="divPage" style="display:block">
-                <div class="row charts">
+            <div id="_allResults" class="divPage" style="display:block; overflow:hidden;">
+                <div class="row charts" style="background-image:url(images/ejemplo-mapa.png); background-position:center;">
                     <!-- Aqui mapa con los graficos-->
                 </div>
 
@@ -119,8 +128,6 @@
                                   <option>Distrito 2</option>
                             </select>
                         </div>
-
-                        <button type="submit" class="btn btn-default">Filtrar</button>
                     </form>
                 </div>
             </div>
@@ -214,8 +221,7 @@
                             <button type="submit" class="btn btn-default">Ver centro de votaci&oacute;n</button> 
                         </form>
                     </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 defaultColumns" style="background-color:#d7d7d7; height:100%;">
-                        <!-- Aqui mapa con lugar de votacion-->
+                    <div class="col-xs-12 col-sm-8 col-md-9" style="height:100%; background-image:url(images/ejemplo-mapa.png); background-position:center;"> <!-- Aqui mapa con lugar de votacion-->
                     </div>
                 </div>
             </div>
