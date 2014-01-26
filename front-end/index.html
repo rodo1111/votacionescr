@@ -21,13 +21,15 @@
             document.getElementById("").style.display = "block";
         }
 
-        //En construccion, aun no funciona
         function showFilterDrawer() {
             var myDrawer = document.getElementById("_filterDrawer");
-            if (myDrawer.style.right == "0px"){
-                myDrawer.style.right = "-360px";
+            var drawerTab = document.getElementById("_drawerTab");
+            if (myDrawer.style.left != "100%"){
+                myDrawer.style.left = "100%";
+                drawerTab.style.right = "0px";
             } else {
-                myDrawer.style.right = "0px";
+                myDrawer.style.left = "";
+                drawerTab.style.right = "";
             }
         }
         </script>
@@ -69,6 +71,7 @@
                     <!-- Aqui mapa con los graficos-->
                 </div>
 
+                <div id="_drawerTab" class="drawerTab" onclick="showFilterDrawer()"></div>
                 <div id="_filterDrawer" class="col-xs-9 col-sm-4 col-lg-3">
                     <form role="form">
                         <div class="form-group">
@@ -119,7 +122,6 @@
 
                         <button type="submit" class="btn btn-default">Filtrar</button>
                     </form>
-                    <div class="drawerTab" onclick="showFilterDrawer()"></div>
                 </div>
             </div>
 
