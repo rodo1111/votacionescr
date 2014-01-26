@@ -21,27 +21,40 @@
         <![endif]-->
     </head>
     <body>
-    	<h1><%= title %></h1>
-    	<p>Welcome to <%= title %></p>
-
-
-
 
         <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
         <header>
+            <div id="_divHeader">
+                <div id="_divLogoApp"></div>
+            </div>
+            
+            <div id="_divMainMenu" class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="_brandText" class="navbar-brand">Votos</div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active" onclick="changeNavbarName(this)"><a href="#">Votos</a></li>
+                        <li><a href="#mivoto" onclick="changeNavbarName(this)">Mi voto</a></li>
+                        <li><a href="#dondevotar" onclick="changeNavbarName(this)">¿En d&oacute;nde voto?</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
         </header>
-
-         <p>Nothing here {{'yet' + '!'}}</p>
-             <p>1 + 2 = {{ 1 + 2 }}</p>
         
-        
-        <div class="container">
-            <div ng-view class="view-frame"></div>
-        </div>
-
+        <section>
+            <div id="_divContent" class="container" ng-view >
+            </div>
+        </section>
         <footer>
         </footer>
         
@@ -50,6 +63,7 @@
         <script src="/javascripts/vendor/angular/angular.min.js"></script>
         <script src="/javascripts/vendor/angular/angular-resource.min.js"></script>
         <script src="/javascripts/vendor/angular/angular-route.min.js"></script>
+        <script src="/javascripts/util.js"></script>
         <script src="/javascripts/app.js"></script>
         <script src="/javascripts/controllers.js"></script>
         <script src="/javascripts/services.js"></script>

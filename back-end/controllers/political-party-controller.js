@@ -40,9 +40,10 @@ var PoliticalPartyController = {
 		var newPoliticalParty = new PoliticalParty(
 			{ 
 				name : 						politicalPartyObj.name,
-				cadidateName : 				politicalPartyObj.cadidateName,
+				candidateName : 			politicalPartyObj.candidateName,
 				candidatePhotoUrl : 		politicalPartyObj.candidatePhotoUrl,
-				politicalPartyPhotoUrl : 	politicalPartyObj.politicalPartyPhotoUrl
+				politicalPartyPhotoUrl : 	politicalPartyObj.politicalPartyPhotoUrl,
+				type :						politicalPartyObj.type
 			}
 		);
 		

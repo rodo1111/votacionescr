@@ -1,0 +1,55 @@
+<!-- HTMl with all the political parties -->
+<div class="row">
+	<div ng-repeat="politicalParty in politicalParties"
+		 class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+		<div class="political-party-box" ng-click="selectPartyForVote(politicalParty._id)"
+			data-toggle="modal" data-target="#modal-select-candidate">
+			<div class="candidate-photo">
+				<img src="{{politicalParty.candidatePhotoUrl}}"
+					class="img-responsive" />
+			</div>
+			<div class="party-photo">
+				<img src="{{politicalParty.politicalPartyPhotoUrl}}" />
+			</div>
+			<div class="candidate-name">
+				<h3>{{politicalParty.candidateName}}</h3>
+			</div>
+			<div class="party-name">
+				<h4>{{politicalParty.name}}</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- HTMl with the modal to select a political party -->
+<div class="modal fade" id="modal-select-candidate" tabindex="-1" role="dialog" aria-labelledby="voteModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title" id="myModalLabel">Mi Voto</h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
+						<img src="{{actualSelectedCandidate.candidatePhotoUrl}}" />	
+					</div>
+					<div ng-show="!voteSuccessfullyEmitted" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<h4>&#191;Su voto es para <b>{{actualSelectedCandidate.candidateName}}</b> del partido 
+							<b>{{actualSelectedCandidate.name}}?</b></h4>	
+					</div>
+					<div ng-show="voteSuccessfullyEmitted" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<h4>Su voto para <b>{{actualSelectedCandidate.candidateName}}</b> del partido 
+							<b>{{actualSelectedCandidate.name}} ha sido emitido correctamente</b></h4>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" ng-show="!voteSuccessfullyEmitted" data-dismiss="modal">No</button>
+				<button type="button" class="btn btn-primary" ng-show="!voteSuccessfullyEmitted" ng-click="voteForParty()">S&iacute, votar</button>
+				<button type="button" class="btn btn-default" ng-show="voteSuccessfullyEmitted" data-dismiss="modal">Cerrar</button>
+				<a href="#" class="btn btn-success" ng-show="voteSuccessfullyEmitted" data-dismiss="modal">Ver resultados</a>
+			</div>
+		</div>
+	</div>
+</div>

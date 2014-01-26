@@ -1,20 +1,21 @@
 var votacionescrApp = angular.module('votacionescrApp', [
 	'ngRoute',
 	'votacionescrControllers',
-	'politicalPartyServices']);
+	'politicalPartyServices',
+	'voterServices']);
 
 votacionescrApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/mivoto', {
-        templateUrl: 'partials/mivoto.html',
+        templateUrl: 'partials/vote.html',
         controller: 'VoterCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/dondevotar', {
+        templateUrl: 'partials/vote-place.html',
       }).
       otherwise({
-        redirectTo: '/phones'
+        templateUrl: 'partials/results.html',
+        redirectTo: ''
       });
   }]);

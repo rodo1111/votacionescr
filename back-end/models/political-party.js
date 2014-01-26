@@ -19,7 +19,8 @@ var politicalParySchema = new Schema({
 	name:					String,
 	candidateName:			String,
 	candidatePhotoUrl:		String,
-	politicalPartyPhotoUrl:	String
+	politicalPartyPhotoUrl:	String,
+	type: 					Number
 });
 
 /**
